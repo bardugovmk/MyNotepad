@@ -16,4 +16,4 @@ Screenshots Code:
 
 ![Demo](https://i.imgur.com/6RacNiB.png)
 
-![Demo](https://i.imgur.com/tgEagx8.png)
+![Demo](https://i.imgur.com/pfCKyyz.png)
