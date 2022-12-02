@@ -21,23 +21,23 @@ namespace MyNotepad
 
             InitializeComponent();
         }
-        // Файл
+        // Г”Г Г©Г«
 
-        // Создать
+        // Г‘Г®Г§Г¤Г ГІГј
         private async void New_Click(object sender, EventArgs e)
         {
             path = string.Empty;
             richTextBox1.Clear();
         }
 
-        // Создать в новом окне
+        // Г‘Г®Г§Г¤Г ГІГј Гў Г­Г®ГўГ®Г¬ Г®ГЄГ­ГҐ
         private void NewWindow_Click(object sender, EventArgs e)
         {
             Form1 mn = new Form1();
             mn.Show();
         }
 
-        // Открыть
+        // ГЋГІГЄГ°Г»ГІГј
         private void Open_Click(object sender, EventArgs e) 
         {
             using (OpenFileDialog ofd = new OpenFileDialog() 
@@ -62,7 +62,7 @@ namespace MyNotepad
             }
         }
 
-        //Сохранить 
+        //Г‘Г®ГµГ°Г Г­ГЁГІГј 
         private async void Save_Click(object sender, EventArgs e) 
         {
             if (string.IsNullOrEmpty(path))
@@ -102,7 +102,7 @@ namespace MyNotepad
             }
         }
 
-        //Сохранить как...
+        //Г‘Г®ГµГ°Г Г­ГЁГІГј ГЄГ ГЄ...
         private async void SaveAs_Click(object sender, EventArgs e) 
         {
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Text Documents|*.txt", ValidateNames = true })
@@ -123,20 +123,20 @@ namespace MyNotepad
                 }
             }
         }
-        // Печать
+        // ГЏГҐГ·Г ГІГј
         private void Print_Click(object sender, EventArgs e)
         {
             DialogResult dr = printDialog1.ShowDialog();
         }
-        // Выход
+        // Г‚Г»ГµГ®Г¤
         private void Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        // Измненить
+        // Г€Г§Г¬Г­ГҐГ­ГЁГІГј
 
-        // Отменить
+        // ГЋГІГ¬ГҐГ­ГЁГІГј
         private void Undo_Click(object sender, EventArgs e)
         {
             if (richTextBox1.CanUndo == true)
@@ -145,7 +145,7 @@ namespace MyNotepad
             }
         }
 
-        // Вернуть(Повторить)
+        // Г‚ГҐГ°Г­ГіГІГј(ГЏГ®ГўГІГ®Г°ГЁГІГј)
         private void Redo_Click(object sender, EventArgs e)
         {
             if (richTextBox1.CanRedo == true)
@@ -154,7 +154,7 @@ namespace MyNotepad
             }
         }
 
-        // Вырезать
+        // Г‚Г»Г°ГҐГ§Г ГІГј
         private void Cut_Click(object sender, EventArgs e)
         {
             if (richTextBox1.SelectedText != "")
@@ -163,13 +163,13 @@ namespace MyNotepad
             }
         }
 
-        // Копировать
+        // ГЉГ®ГЇГЁГ°Г®ГўГ ГІГј
         private void Copy_Click(object sender, EventArgs e)
         {
             richTextBox1.Copy();
         }
 
-        // Вставить
+        // Г‚Г±ГІГ ГўГЁГІГј
         private void Paste_Click(object sender, EventArgs e)
         {
             if (Clipboard.GetDataObject().GetDataPresent(DataFormats.Text) == true)
@@ -178,14 +178,14 @@ namespace MyNotepad
             }
         }
 
-        // Выделить все
+        // Г‚Г»Г¤ГҐГ«ГЁГІГј ГўГ±ГҐ
         private void SelectAll_Click(object sender, EventArgs e)
         {
             richTextBox1.SelectAll();
         }
 
-        // Формат
-        // Шрифт
+        // Г”Г®Г°Г¬Г ГІ
+        // ГГ°ГЁГґГІ
         private void Font_Click(object sender, EventArgs e)
         {
             DialogResult dr = fontDialog1.ShowDialog();
@@ -195,7 +195,7 @@ namespace MyNotepad
             }
         }
 
-        // Цвет
+        // Г–ГўГҐГІ
         private void Colour_Click(object sender, EventArgs e)
         {
             ColorDialog fc = new ColorDialog();
@@ -203,7 +203,7 @@ namespace MyNotepad
                 richTextBox1.ForeColor = fc.Color;
         }
 
-        // Перенос по словам
+        // ГЏГҐГ°ГҐГ­Г®Г± ГЇГ® Г±Г«Г®ГўГ Г¬
         private void WordWrap_Click(object sender, EventArgs e)
         {
             if (WordWrap.Checked)
@@ -217,37 +217,37 @@ namespace MyNotepad
             }
         }
 
-        // Вернутся в начало текста
+        // Г‚ГҐГ°Г­ГіГІГ±Гї Гў Г­Г Г·Г Г«Г® ГІГҐГЄГ±ГІГ 
         private void JumpToTop_Click(object sender, EventArgs e)
         {
             richTextBox1.SelectionStart = 0;
             richTextBox1.ScrollToCaret();
         }
 
-        // Вернутся в конец текста
+        // Г‚ГҐГ°Г­ГіГІГ±Гї Гў ГЄГ®Г­ГҐГ¶ ГІГҐГЄГ±ГІГ 
         private void JumpToBottom_Click(object sender, EventArgs e)
         {
             richTextBox1.SelectionStart = richTextBox1.Text.Length;
             richTextBox1.ScrollToCaret();
         }
 
-        // Найти
+        // ГЌГ Г©ГІГЁ
         private void Find_Click(object sender, EventArgs e)
         {
             toolStripTextBox1.Focus();
         }
 
-        // Найти и заменить
+        // ГЌГ Г©ГІГЁ ГЁ Г§Г Г¬ГҐГ­ГЁГІГј
         private void FindAndReplace_Click(object sender, EventArgs e)
         {
             toolStripTextBox2.Focus();
         }
 
-        // Замена
+        // Г‡Г Г¬ГҐГ­Г 
         private void Replace_Click(object sender, EventArgs e)
         {
             if (toolStripTextBox2.Text != null && !string.IsNullOrWhiteSpace(toolStripTextBox2.Text) 
-                && toolStripTextBox3.Text != null && !string.IsNullOrWhiteSpace(toolStripTextBox3.Text)) /// что это?
+                && toolStripTextBox3.Text != null && !string.IsNullOrWhiteSpace(toolStripTextBox3.Text)) 
             {
                 richTextBox1.Text = richTextBox1.Text.Replace(toolStripTextBox2.Text, toolStripTextBox3.Text);
                 toolStripTextBox2.Text = "";
@@ -255,7 +255,7 @@ namespace MyNotepad
             }
         }
 
-        // Поиск 
+        // ГЏГ®ГЁГ±ГЄ 
         private void Search(object sender, EventArgs e)
         {
             string keywords = toolStripTextBox1.Text;
@@ -283,7 +283,7 @@ namespace MyNotepad
             richTextBox1.SelectionBackColor = Color.White;
         }
 
-        // О программе
+        // ГЋ ГЇГ°Г®ГЈГ°Г Г¬Г¬ГҐ
         private void AboutTheProgram_Click(object sender, EventArgs e)
         {
             using (AboutForm frm = new AboutForm())
